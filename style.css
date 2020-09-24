@@ -1,0 +1,41 @@
+/*Created by Shelley Ophir
+Coding Dojo Sep. 24, 2020
+Create a web page that uses jQuery functions*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*border: 1px dashed red;*/
+}
+
+#wrapper{
+    margin: 0 auto;
+    width: 500px;
+    background-color: gray;
+}
+
+button{
+    height: 38px;
+    background-color: greenyellow;
+    color: rgb(49, 47, 47);
+    padding: 10px;
+    border-radius: 8px;
+    margin: 3px;
+}
+
+.block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.red{
+    background-color: red;
+}
+
+#fade img{
+    display: none;/*must have the image start hidden in order for the fadeIn property to work*/
+}

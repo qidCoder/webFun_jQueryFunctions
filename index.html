@@ -1,0 +1,184 @@
+<!--Created by Shelley Ophir
+Coding Dojo Sep. 24, 2020
+Create a web page that uses jQuery functions -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Practice</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="block">
+            <h1>jQuery Fun!</h1>
+            <p>Here are some popular jQuery functions and examples</p>
+        </div>
+
+        <div class="block addClass">
+            <h2>addClass, removeClass, CSS</h2>
+            <p>Click the button to add the class .red to this paragraph and then click the removeClass button to remove
+                the class</p>
+            <button id="addClass">addClass</button>
+            <button id="removeClass">removeClass</button>
+            <p>now click the CSS button to add a new font style!</p>
+            <button id="css">CSS</button>
+        </div>
+
+        <div class='block' id="manipulation">
+            <h2>Manipulation</h2>
+            <p>Hover over me to HIDE ME!!!!!!!!!!!!</p>
+
+            <div id="riddle" class="block">
+                <button>Click me to finish the joke!</button>
+                <p>What has many keys but can't open a single lock?</p>
+
+            </div>
+
+            <div id="starbucks" class="block">
+                <button>Coffee Order</button>
+                <p>drink</p>
+            </div>
+
+            <div id="name" class="block">
+                <button id="b4">before</button>
+                <p>username: </p>
+                <button id="aft">after</button>
+
+            </div>
+
+
+        </div>
+
+        <div id="effects" class="block">
+            <button>Click me to add the Effects div!</button>
+        </div>
+
+        <div id="text_change" class="block">
+            <button>Change Text</button>
+            <p>"Still it's a real good bet...</p>
+        </div>
+
+        <div id="toggle" class="block">
+            <button class="toggle">Toggle show/hide</button>
+            <img src="img/bellagio.jpg" height=100>
+            <button id="attr">Make larger</button>
+        </div>
+
+        <div id="slide" class="block">
+            <img src="img/dancer.png" height=200>
+            <button id="up">Up</button>
+            <button id="down">Down</button>
+            <button id="slideToggle">Slide Toggle</button>
+        </div>
+
+        <div id="fade" class="block">
+            <img src="img/teamlab.jpg" height=200>
+            <button id="fadein">Fade In</button>
+            <button id="fadeout">Fade Out</button>
+        </div>
+
+        <div id="form" class="block">
+            <input type="text">
+            <button>Set the text field value to Hello!</button>
+        </div>
+
+    </div>
+
+    <!--jQuery needs to be inserted inside the body-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $('#addClass').click(function () {
+            $('.addClass').addClass('red');
+        });
+
+        $('#removeClass').click(function () {
+            $('.addClass').removeClass('red');
+        });
+
+        $('#css').click(function () {
+            $('.addClass').css("font-family", "lucida calligraphy");
+        });
+
+        $('#manipulation p').hover(
+            function () {
+                $('#manipulation p').hide();
+            },
+
+            function () {
+                $('#manipulation p').show();
+            });
+
+        $('#riddle button').click(function () {
+            $('#riddle p').append("<br><b>A piano!</b><img src='img/piano.png' height=100>");
+        });
+
+        $('#starbucks button').click(function () {
+            $('#starbucks p').prepend('Tall caramel frappuccino ');
+        });
+
+        $('#b4').click(function () {
+            $('#name p').before('Github ');
+        });
+
+        $('#aft').click(function () {
+            $('#name p').after(' @qidCoder');
+        });
+
+        $('#effects button').click(function () {
+            $('#effects').html('<div><p>This is the effects div!</p><button id="toggle">Toggle me on and off!</button></div>');
+        });
+
+        $('#toggle').click(function () {
+            $('#effects p').toggle();
+        });
+
+        $('#text_change button').click(function () {
+            $('#text_change p').text('.."The best is yet to come."');
+        });
+
+        $('.toggle').click(function () {
+            $('#toggle img').toggle();
+        });
+
+        $('#attr').click(function () {
+            $('#toggle img').attr("height", "200");
+        });
+
+        $('#up').on("click", function () {
+            $('#slide img').slideUp("slow");
+        });
+
+        $('#down').on("click", function () {
+            $('#slide img').slideDown("slow");
+        });
+
+        $('#slideToggle').on("click", function () {
+            $('#slide img').slideToggle();
+        });
+
+        $('#fadein').on("click", function () {
+            $('#fade img').fadeIn("slow");
+        });
+
+        $('#fadeout').on("click", function () {
+            $('#fade img').fadeOut("slow");
+        });
+
+        $("#form button").click(function () {
+            $('#form input').val("Hello!");
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
